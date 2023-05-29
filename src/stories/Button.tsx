@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 
-const getSizeClasses = (size) => {
+const getSizeClasses = (size: string) => {
   switch (size) {
     case 'small': {
       return 'px-4 py-2.5';
@@ -14,7 +14,7 @@ const getSizeClasses = (size) => {
   }
 };
 
-const getModeClasses = (isPrimary) =>
+const getModeClasses = (isPrimary: boolean) =>
   isPrimary
     ? 'text-white bg-pink-600 border-pink-600 dark:bg-pink-700 dark:border-pink-700'
     : 'text-slate-700 bg-blue-200 border-slate-700 dark:text-white dark:border-white';
@@ -24,16 +24,30 @@ const BASE_BUTTON_CLASSES =
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary = false, size = 'medium', label, ...props }) => {
+export const Button = ({
+  primary = false,
+  size = "medium",
+  label,
+  ...props
+}: {
+  primary: boolean;
+  size: string;
+  label: string;
+  [x: string]: any;
+}) => {
   const computedClasses = useMemo(() => {
     const modeClass = getModeClasses(primary);
     const sizeClass = getSizeClasses(size);
 
-    return [modeClass, sizeClass].join(' ');
+    return [modeClass, sizeClass].join(" ");
   }, [primary, size]);
 
   return (
-    <button type="button" className={`${BASE_BUTTON_CLASSES} ${computedClasses}`} {...props}>
+    <button
+      type="button"
+      className={`${BASE_BUTTON_CLASSES} ${computedClasses}`}
+      {...props}
+    >
       {label}
     </button>
   );

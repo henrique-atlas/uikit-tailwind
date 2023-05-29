@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <head>
-        <meta charset="UTF-8" />
+        {/* <meta charset="UTF-8" /> */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="/dist/output.css" rel="stylesheet" />
       </head>
@@ -30,7 +30,7 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
         <h1 className="text-3xl font-bold underline">
-          Hello world!
+          Hello tailwind world!
         </h1>
       </div>
       <p className="read-the-docs">
