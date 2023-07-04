@@ -1,3 +1,5 @@
+import React from "react";
+
 export const SearchInput = () => (
     <div className="flex">
       <input type="text"  className="w-full bg-white pl-2 text-base font-semibold border-solid border-slate-200 rounded-xl outline-0" placeholder="Search" id="search-input" />

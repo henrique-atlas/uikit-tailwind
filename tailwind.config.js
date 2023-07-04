@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{html,js,tsx, ts}"],
@@ -11,6 +13,13 @@ export default {
           900: '#06195E',
         },
     },
+    fontFamily: {
+      sans: [
+        'Gelion',
+        'sans-serif',
+        ...defaultTheme.fontFamily.sans,
+      ]
+    }
     // colors: {
     //   'purple': '#7e5bef',
     //   'pink': '#ff49db',
